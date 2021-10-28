@@ -12,35 +12,20 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>Password Generator</h1>
+      <h1>Password Generator and Decoder</h1>
     </header>
     <div class="card">
       <div class="card-header">
-        <h2>Generate a Password</h2>
+        <h2>What Would You Like To Do?</h2>
       </div>
       <div class="card-body">
-        <br/>
-        
-        <label for="long">How Many Characters Long Would You Like This Password To Be? (Between 8 and 120 Characters)</label>
-        <br />
-        <input type="text" id="long" name="long">
-        <br/>
-        <p>What Would You Like The Password To Contain?</p>
-        <input type="checkbox" id="uppercase" name="uppercase" value="uppercase">
-        <label for="Uppercase">Uppercase</label>
-        <input type="checkbox" id="lowercase" name="lowercase" value="lowercase">
-        <label for="lowercase">Lowercase</label>
-        <input type="checkbox" id="numbers" name="numbers" value="numbers">
-        <label for="numbers">Numbers</label>
-        <br /><br />
-        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-      </div>
-      <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
-      </div>
+             <a href="./generate.html"><button class="btn">Generate Password</button></a></br>
+             <a href="./decoder.html"><button class="btn">Decode Password</button></a></br>
+             <a href="./email.html"><button id="email" class="btn">Email Password</button></a>
+            </div>
+      <p>Note: This coder is meant for portfolio purposes only and is not HIPAA compliant, and therefore, should not be used to decrypt passwords to highly sensitive data.  Use it at your own discretion.</p>
     </div>
   </div>
-  <script src="script.js"></script>
 </body>
 
 </html>
