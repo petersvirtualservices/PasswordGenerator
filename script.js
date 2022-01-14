@@ -23,8 +23,7 @@ function generatePassword() {
   const lettersLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   const numbersAdd = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var passwordArray = [];
-  var resultArray = [];
-
+  
   if(uppercase.checked == true && lowercase.checked == true && numbers.checked == true){
     var passwordArray = [...letters, ...lettersLower, ...numbersAdd];
   }
@@ -55,16 +54,15 @@ function generatePassword() {
   
   var resultPre = passwordArray.toString();
   var resultCommaRemoved = resultPre.split(',').join('');
- 
-  var resultHere = resultCommaRemoved.charAt(Math.floor(Math.random()*passwordArray.length));
-
-  //Will not repeat password charAt
-  var resultOne = resultArray.push(resultHere);
+  
+  let resultArray = [];
+  var resultHere = resultArray.push(resultCommaRemoved.charAt(Math.floor(Math.random()*passwordArray.length)));
+  
+  var result = resultHere;
 
   
   console.log(resultCommaRemoved);
   console.log(resultHere);
-  console.log(resultOne);
   return result;
 
 };
