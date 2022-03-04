@@ -1,5 +1,10 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var uppercase = document.getElementById("uppercase");
+var lowercase = document.getElementById("lowercase");
+var numbers = document.getElementById("numbers");
+var long = document.getElementById("long");
+//var long = 11;
 
 //email password using bcrypt
 
@@ -7,7 +12,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  result = password;
+  //console.log(password);
   passwordText.value = password;
 }
 
@@ -15,14 +20,13 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  const uppercase = document.getElementById("uppercase");
-  const lowercase = document.getElementById("lowercase");
-  const numbers = document.getElementById("numbers");
-  const long = document.getElementById("long");
+  //var long = document.getElementById("long");
   const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   const lettersLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   const numbersAdd = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var passwordArray = [];
+
+
 
   if (uppercase.checked == true && lowercase.checked == true && numbers.checked == true) {
     var passwordArray = [...letters, ...lettersLower, ...numbersAdd];
@@ -54,22 +58,29 @@ function generatePassword() {
 
   var resultPre = passwordArray.toString();
   var resultCommaRemoved = resultPre.split(',').join('');
-  console.log(resultCommaRemoved);
+  console.log("resultCommaRemoved: " + resultCommaRemoved);
 
   let resultArray = [];
 
+  console.log("Long: " + long);
   for (var i = 0; i < long.value; i++) {
     var resultEntry = resultCommaRemoved.charAt(Math.floor(Math.random() * resultCommaRemoved.length));
     resultArray.push(resultEntry);
   }
 
-
+  console.log(resultArray);
   var resultAlmost = resultArray.toString();
   var result = resultAlmost.split(',').join('');
 
 
   //console.log(resultCommaRemoved);
-  console.log(resultArray);
+  console.log(result);
   return result;
-
+  return long;
 };
+
+/*
+function decodePassword() {
+
+}\
+*/
