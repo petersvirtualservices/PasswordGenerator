@@ -4,20 +4,26 @@ var uppercase = document.getElementById("uppercase");
 var lowercase = document.getElementById("lowercase");
 var numbers = document.getElementById("numbers");
 var long = document.getElementById("long");
-//var long = 11;
-
-//email password using bcrypt
+var copy = document.getElementById("copy");
+var passwordText = document.querySelector("#password");
+//require('dotenv').config();
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   //console.log(password);
+  if(long.value<8 || long.value>120){
+    passwordText.value = "You Need To Choose Another Length";
+  } else{
   passwordText.value = password;
-}
+}}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Add event listener to generate button
+copy.addEventListener("click", copyPassword);
 
 function generatePassword() {
   //var long = document.getElementById("long");
@@ -72,12 +78,28 @@ function generatePassword() {
   var resultAlmost = resultArray.toString();
   var result = resultAlmost.split(',').join('');
 
-
   //console.log(resultCommaRemoved);
   console.log(result);
   return result;
   return long;
 };
+
+
+function copyPassword() {
+  /*
+var encrypt = process.env.ENCRYPTKEY;
+console.log(encrypt);
+*/
+
+var encrypt = "hXkWIEeX1aL42waTlAYsPbHu93w6w8Utl0bVHt2q85KwzGsit9nZOQxrrd5AIrpBO9XitJW7tDrqb1r1CWssn9V5iLqXtUH2lHoo";
+
+console.log("Password: " + passwordText.value);
+
+
+}
+
+
+
 
 /*
 function decodePassword() {
