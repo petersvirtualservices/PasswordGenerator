@@ -98,7 +98,7 @@ button[disabled] {
   float: right;
 }
 
-#password {
+.passwordView {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

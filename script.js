@@ -6,6 +6,9 @@ var numbers = document.getElementById("numbers");
 var long = document.getElementById("long");
 var copy = document.getElementById("copy");
 var passwordText = document.querySelector("#password");
+var coded = document.getElementById("coded");
+var passwordDecodedPlace = document.getElementById("passwordDecodedPlace");
+var decode = document.getElementById("decode");
 //require('dotenv').config();
 
 // Write password to the #password input
@@ -13,17 +16,22 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   //console.log(password);
-  if(long.value<8 || long.value>120){
+  if (long.value < 8 || long.value > 120) {
     passwordText.value = "You Need To Choose Another Length";
-  } else{
-  passwordText.value = password;
-}}
+  } else {
+    passwordText.value = password;
+  }
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// Add event listener to generate button
+// Add event listener to copy button
 copy.addEventListener("click", copyPassword);
+
+// Add event listener to decoder button
+decode.addEventListener("click", decodePassword);
+
 
 function generatePassword() {
   //var long = document.getElementById("long");
@@ -86,23 +94,18 @@ function generatePassword() {
 
 
 function copyPassword() {
-  /*
-var encrypt = process.env.ENCRYPTKEY;
-console.log(encrypt);
-*/
-
-var encrypt = "hXkWIEeX1aL42waTlAYsPbHu93w6w8Utl0bVHt2q85KwzGsit9nZOQxrrd5AIrpBO9XitJW7tDrqb1r1CWssn9V5iLqXtUH2lHoo";
-
-console.log("Password: " + passwordText.value);
-
-
+  //var encrypt = process.env.ENCRYPTKEY;
+  var encrypt = "hXkWIEeX1aL42waTlAYsPbHu93w6w8Utl0bVHt2q85KwzGsit9nZOQxrrd5AIrpBO9XitJW7tDrqb1r1CWssn9V5iLqXtUH2lHoo";
+  console.log("Password: " + passwordText.value);
+  var encryptPassword = encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + passwordText.value + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30));
+  console.log(encryptPassword);
+  navigator.clipboard.writeText(encryptPassword);
 }
 
 
 
 
-/*
 function decodePassword() {
-
-}\
-*/
+  var codedHere = "asdfasdfasd";
+  passwordDecodedPlace.value = codedHere;
+}
