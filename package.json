@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "dotenv": "^16.0.0",
-    "lighthouse": "^9.2.0"
+    "lighthouse": "^9.5.0"
   }
 }

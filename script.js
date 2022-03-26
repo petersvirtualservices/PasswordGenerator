@@ -9,7 +9,8 @@ var passwordText = document.querySelector("#password");
 var coded = document.getElementById("coded");
 var passwordDecodedPlace = document.getElementById("passwordDecodedPlace");
 var decode = document.getElementById("decode");
-//require('dotenv').config();
+//const dotenv = require('dotenv').config({ path: __dirname + '/.env' });
+
 
 // Write password to the #password input
 function writePassword() {
@@ -94,7 +95,9 @@ function generatePassword() {
 
 
 function copyPassword() {
-  //var encrypt = process.env.ENCRYPTKEY;
+  
+  //var encryptOne = process.env.ENCRYPTKEY;
+  //console.log(encryptOne);
   var encrypt = "hXkWIEeX1aL42waTlAYsPbHu93w6w8Utl0bVHt2q85KwzGsit9nZOQxrrd5AIrpBO9XitJW7tDrqb1r1CWssn9V5iLqXtUH2lHoo";
   console.log("Password: " + passwordText.value);
   var encryptPassword = encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + passwordText.value + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30)) + encrypt.charAt(Math.floor(Math.random() * 30));
