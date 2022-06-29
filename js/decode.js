@@ -9,12 +9,17 @@ decode.addEventListener("click", decodePassword);
 //This isn't functioning
 function decodePassword() {
 
-    var passwordEncrypterPlaceholder = ["1ryyNdDH5dr","2K7dma6AfLc", "30JP4GEsx8L", "4yNuof3FojI", "5Dkadu8R3UA"];
+    var passwordArray = coded.value.split('');
 
-    var passwordEncrypted = passwordEncrypterPlaceholder[Math.floor(Math.random()*5)]+decode.value+passwordEncrypterPlaceholder[Math.floor(Math.random()*5)]
+    console.log(passwordArray);
 
-    console.log(passwordEncrypted);
+    var passwordDecoderOne = passwordArray.splice(0,11);
 
-    passwordDecodedPlace.value = passwordEncrypted;
+    var passwordDecoderTwo = passwordArray.splice(-11);
+
+    console.log(passwordDecoderOne);
+    console.log(passwordDecoderTwo);
+
+    passwordDecodedPlace.value = passwordArray;
   }
   
