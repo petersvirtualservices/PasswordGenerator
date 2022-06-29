@@ -13,13 +13,18 @@ function decodePassword() {
 
     console.log(passwordArray);
 
-    var passwordDecoderOne = passwordArray.splice(0,11);
+    passwordArray.splice(0,11);
 
-    var passwordDecoderTwo = passwordArray.splice(-11);
+    passwordArray.splice(-11);
 
-    console.log(passwordDecoderOne);
-    console.log(passwordDecoderTwo);
+    
 
-    passwordDecodedPlace.value = passwordArray;
+    var answerTwo = passwordArray.toString();
+
+    var answer = answerTwo.replace(/,/g, '');
+
+    console.log(answer);
+
+    passwordDecodedPlace.value = answer;
   }
   
