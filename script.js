@@ -30,9 +30,6 @@ generateBtn.addEventListener("click", writePassword);
 // Add event listener to copy button
 copy.addEventListener("click", copyPassword);
 
-// Add event listener to decoder button
-decode.addEventListener("click", decodePassword);
-
 
 function generatePassword() {
   //var long = document.getElementById("long");
